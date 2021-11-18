@@ -74,6 +74,18 @@ export class AuthService {
 
 
 
+
+
+  logout(){
+    //limpia el localstorage pero solo de esta url no de otras apps
+  localStorage.clear();
+
+
+  }
+
+
+
+
 }
 
 
