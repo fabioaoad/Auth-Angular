@@ -23,15 +23,21 @@ export class LoginComponent{
 
 
   login(){
-    console.log(this.miFormulario.value);
+    //console.log(this.miFormulario.value);
     //extraigo el emial y password del formulario
    const { email, password } = this.miFormulario.value;
-   console.log(this.miFormulario.valid);
+  // console.log(this.miFormulario.valid);
     this.authService.login( email, password )
-      .subscribe( resp => {
-        console.log(resp);
+      .subscribe( ok => {
+       // console.log(ok);
+        if( ok ){
+          //Navego al usuario
+          this.router.navigateByUrl('/dashboard');
+        }else{
+          // mostrar mensaje de error
+        }
       });
-   // this.router.navigateByUrl('/dashboard');
+
 
 
   }
