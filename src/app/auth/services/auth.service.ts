@@ -35,12 +35,12 @@ export class AuthService {
           if( resp.ok ){
             this._usuario = {
               name: resp.name!,
-              uid : resp.uid!
+              uid  : resp.uid!
             }
           }
         }),
         map( resp => resp.ok ),
-        catchError( err => of(false) )
+        catchError( err => of(err.error.msg) )
       );
   }
 
