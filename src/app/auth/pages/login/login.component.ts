@@ -43,6 +43,9 @@ export class LoginComponent{
       });
 
 
+    this.authService.validarToken()
+      .subscribe( resp => console.log(resp) );
+
 
   }
 
